@@ -1,8 +1,11 @@
-<div class="profile-card">
+@if (profile) {<div class="profile-card">
   <div class="avatar-name">
-    <img src="/assets/images/avatar.png" alt="avatar" class="profile-card__avatar">
+    <img
+      [src]="profile.avatarUrl | imgUrl"
+      alt="avatar"
+      class="profile-card__avatar">
     <div class="profile-card__name">
-      <strong class="h6">Райан Гослинг</strong>
+      <strong class="h6">{{ profile.firstName }}</strong>
       <span class="subtitle">rayn.gosling</span>
     </div>
   </div>
@@ -12,13 +15,13 @@
   </div>
 
   <div class="profile-card__tags">
-    <div class="skill-tag">Angular</div>
-    <div class="skill-tag">HTML</div>
-    <div class="skill-tag">CSS</div>
-    <div class="skill-tag">Java</div>
+    @for (skill of profile.stack; track skill) {
+      <div class="skill-tag">{{ skill }}</div>
+    }
   </div>
 
   <div class="profile-card__action-buttons">
     <button class="btn">Подписаться</button>
   </div>
 </div>
+}
