@@ -19,9 +19,8 @@
 body {
   font-family: "JetBrains Mono", sans-serif;
   font-weight: 800;
-  background-color: var(--dark-color);
+  background: var(--dark-color);
   color: var(--light-color);
-  background-image: url(/assets/images/bg.jpg);
 }
 
 .skill-tag {
